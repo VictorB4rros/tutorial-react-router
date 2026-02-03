@@ -1,10 +1,16 @@
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Expenses from './routes/expenses/index.tsx'
+import Invoices from './routes/invoices/index.tsx'
 
 createRoot(document.getElementById('root')!).render(
 
   <BrowserRouter>
-    <App />
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="expenses" element={<Expenses />} />
+      <Route path="invoices" element={<Invoices />} />
+    </Routes>
   </BrowserRouter>,
 )
